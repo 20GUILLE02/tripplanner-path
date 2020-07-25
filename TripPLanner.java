@@ -50,11 +50,11 @@ public class TripPlanner {
         String time = input.next();
         int numberTime = Integer.parseInt(time);
         if(numberTime <=12 && numberTime >=0){
-                System.out.println("That means that when it is midnight at home it will be "+(numberTime+12)+" in your travel destination");
-                System.out.println("and when it is noon at home it will be " +numberTime );
+                System.out.println("That means that when it is midnight at home it will be "+(numberTime)+" in your travel destination");
+                System.out.println("and when it is noon at home it will be " +(numberTime+12) );
             } else {
                 System.out.println("That means that when it is midnight at home it will be "+(numberTime+24)+" in your travel destination");
-                System.out.println("and when it is noon at home it will be " +(numberTime+12));
+                System.out.println("and when it is noon at home it will be " +(numberTime + 12));
             }
     }
 
@@ -63,6 +63,6 @@ public class TripPlanner {
         System.out.print("What is the square area of your destination country in km2?");
         String area = input.next();
         int numberArea = Integer.parseInt(area);
-        System.out.println("In miles2 that is " +(numberArea*1.60934) );
+        System.out.println("In miles2 that is " +(numberArea*0.386102) );
     }
 }
