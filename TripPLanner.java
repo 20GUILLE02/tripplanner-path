@@ -9,21 +9,21 @@ import java.util.Scanner;
 
 public class TripPlanner {
     public static void main (String[] args) {
-        System.out.println("Welcome to the vacation planner");
+        logger.println("Welcome to the vacation planner");
         Greeting();
         TimeAndBudget();
         TimeDifference();
         CountryArea();
-        System.out.println("Have a great trip!");
+        logger.println("Have a great trip!");
     }
 
     public static void Greeting(){
         Scanner input = new Scanner(System.in);
-        System.out.print("What's your name?");
+        logger.print("What's your name?");
         String name = input.next();
-        System.out.print("Nice to meet you " + name + ", where are you travelling to?");
+        logger.print("Nice to meet you " + name + ", where are you travelling to?");
         String city = input.next();
-        System.out.println("Great! " + city + " sounds like a great trip");
+        logger.println("Great! " + city + " sounds like a great trip");
     }
 
     public static void TimeAndBudget() {
