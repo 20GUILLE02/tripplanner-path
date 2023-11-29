@@ -10,14 +10,14 @@ import java.util.Scanner;
 public class TripPlanner {
     public static void main (String[] args) {
         logger.println("Welcome to the vacation planner");
-        Greeting();
-        TimeAndBudget();
-        TimeDifference();
-        CountryArea();
+        greeting();
+        timeAndBudget();
+        timeDifference();
+        countryArea();
         logger.println("Have a great trip!");
     }
 
-    public static void Greeting(){
+    public static void greeting(){
         Scanner input = new Scanner(System.in);
         logger.print("What's your name?");
         String name = input.next();
@@ -26,43 +26,43 @@ public class TripPlanner {
         logger.println("Great! " + city + " sounds like a great trip");
     }
 
-    public static void TimeAndBudget() {
+    public static void timeAndBudget() {
         Scanner input = new Scanner(System.in);
-        System.out.print("How many days are you going to spend travelling?");
+        logger.print("How many days are you going to spend travelling?");
         String days = input.next();
         int numberDays = Integer.parseInt(days);
-        System.out.print("How much money, in USD, are you planning to spend on your trip?");
+        logger.print("How much money, in USD, are you planning to spend on your trip?");
         String money = input.next();
         double numberMoney = Double.parseDouble(money);
-        System.out.print("What is the three letter currency symbol for your travel destination?");
+        logger.print("What is the three letter currency symbol for your travel destination?");
         String moneyName = input.next();
-        System.out.print("How many " + moneyName + " are there in 1 USD?");
+        logger.print("How many " + moneyName + " are there in 1 USD?");
         String amount = input.next();
         double numberAmount = Double.parseDouble(amount);
-        System.out.println("If you are travelling for " + numberDays + " days that is the same as " + (numberDays * 24) + " hours or " + (numberDays*24*60) + " minutes or "+(numberDays*24*60*60)+ " seconds");
-        System.out.println("If you are going to spend " + numberMoney + " USD that means that per day you can spend up to " + numberMoney/numberDays + " USD");
-        System.out.println("Your total budget in " +moneyName+ " is "+ (numberMoney*numberAmount)+ " " +moneyName + ", which per day is "+((numberMoney*numberAmount)/numberDays)+ " "+moneyName );
+        logger.println("If you are travelling for " + numberDays + " days that is the same as " + (numberDays * 24) + " hours or " + (numberDays*24*60) + " minutes or "+(numberDays*24*60*60)+ " seconds");
+        logger.println("If you are going to spend " + numberMoney + " USD that means that per day you can spend up to " + numberMoney/numberDays + " USD");
+        logger.println("Your total budget in " +moneyName+ " is "+ (numberMoney*numberAmount)+ " " +moneyName + ", which per day is "+((numberMoney*numberAmount)/numberDays)+ " "+moneyName );
     }
 
-    public static void TimeDifference() {
+    public static void timeDifference() {
         Scanner input = new Scanner(System.in);
-        System.out.print("What is the time difference, in hours, between your home and your destination?");
+        logger.print("What is the time difference, in hours, between your home and your destination?");
         String time = input.next();
         int numberTime = Integer.parseInt(time);
         if(numberTime <=12 && numberTime >=0){
-                System.out.println("That means that when it is midnight at home it will be "+(numberTime)+" in your travel destination");
-                System.out.println("and when it is noon at home it will be " +(numberTime+12) );
+                logger.println("That means that when it is midnight at home it will be "+(numberTime)+" in your travel destination");
+                logger.println("and when it is noon at home it will be " +(numberTime + 12) );
             } else {
-                System.out.println("That means that when it is midnight at home it will be "+(numberTime+24)+" in your travel destination");
-                System.out.println("and when it is noon at home it will be " +(numberTime + 12));
+                logger.println("That means that when it is midnight at home it will be "+(numberTime+24)+" in your travel destination");
+                logger.println("and when it is noon at home it will be " +(numberTime + 12));
             }
     }
 
-    public static void CountryArea() {
+    public static void countryArea() {
         Scanner input = new Scanner(System.in);
-        System.out.print("What is the square area of your destination country in km2?");
+        logger.print("What is the square area of your destination country in km2?");
         String area = input.next();
         int numberArea = Integer.parseInt(area);
-        System.out.println("In miles2 that is " +(numberArea*0.386102) );
+        logger.println("In miles2 that is " +(numberArea * 0.386102) );
     }
 }
